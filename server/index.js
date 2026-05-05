@@ -8,8 +8,8 @@ app.use(express.json());
 let students = [];
 
 // GET
-app.get("/students", (req, res) => {
-  res.json(students);
+app.get("/", (req, res) => {
+  res.send("Student Management System API is running 🚀");
 });
 
 // POST
