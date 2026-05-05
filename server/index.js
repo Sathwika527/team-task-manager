@@ -1,78 +1,44 @@
 const express = require("express");
 const cors = require("cors");
-const mysql = require("mysql2");
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-/* ✅ MySQL CONNECTION */
-const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "root", // 🔴 change this
-  database: "task_manager"
+let tasks = []; // ✅ MAKE SURE THIS EXISTS
+
+// ROOT
+app.get("/", (req, res) => {
+  res.send("Team Task Manager API is running 🚀");
 });
 
-db.connect((err) => {
-  if (err) {
-    console.log("DB connection error:", err);
-  } else {
-    console.log("MySQL Connected ✅");
-  }
-});
-
-/* ✅ TEST ROUTE */
+// GET
 app.get("/tasks", (req, res) => {
   res.json(tasks);
 });
 
-/* ✅ GET ALL TASKS */
-app.get("/tasks", (req, res) => {
-  db.query("SELECT * FROM tasks", (err, result) => {
-    if (err) {
-      console.log(err);
-      return res.send("Error fetching tasks");
-    }
-    res.json(result);
-  });
-});
-
-/* ✅ ADD TASK */
+// POST
 app.post("/tasks", (req, res) => {
-  const { title, description, assignedTo, status } = req.body;
+  const newTask = {
+    id: Date.now(),
+    title: req.body.title,
+    description: req.body.description,
+    assignedTo: req.body.assignedTo,
+    status: req.body.status || "Pending"
+  };
 
-  db.query(
-    "INSERT INTO tasks (title, description, assignedTo, status) VALUES (?, ?, ?, ?)",
-    [title, description, assignedTo, status],
-    (err, result) => {
-      if (err) {
-        console.log(err);
-        return res.send("Error adding task");
-      }
-      res.send("Task added successfully");
-    }
-  );
+  tasks.push(newTask);
+  res.json(newTask);
 });
 
-/* ✅ DELETE TASK */
+// DELETE
 app.delete("/tasks/:id", (req, res) => {
-  db.query(
-    "DELETE FROM tasks WHERE id = ?",
-    [req.params.id],
-    (err, result) => {
-      if (err) {
-        console.log(err);
-        return res.send("Error deleting task");
-      }
-      res.send("Task deleted successfully");
-    }
-  );
+  tasks = tasks.filter(t => t.id != req.params.id);
+  res.json({ message: "Deleted" });
 });
 
-/* ✅ START SERVER */
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-  console.log("Server running on port " + PORT);
+  console.log("Server running");
 });
