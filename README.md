@@ -1,27 +1,27 @@
-# 🧑‍💻 Team Task Manager
+# Team Task Manager
 
 A full-stack web application to manage team tasks, assign work, and track progress. Built using React, Node.js, Express, and MySQL, and deployed online.
 
 ---
 
-## 🚀 Live Demo
+## Live Demo
 
-🌐 Frontend: https://client-livid-eight-87.vercel.app
-🔗 Backend API: https://team-task-manager-production-5918.up.railway.app
+Frontend: https://client-livid-eight-87.vercel.app
+Backend API: https://team-task-manager-production-5918.up.railway.app
 
 ---
 
-## 📌 Features
+## Features
 
 * Create tasks
 * Assign tasks to team members
 * Track task status (Pending / In Progress / Done)
 * Delete tasks
-* Responsive UI
+* Responsive user interface
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend
 
@@ -44,9 +44,9 @@ A full-stack web application to manage team tasks, assign work, and track progre
 
 ---
 
-## ⚙️ Installation & Setup
+## Installation and Setup
 
-### 1️⃣ Clone the repository
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/your-username/team-task-manager.git
@@ -55,7 +55,7 @@ cd team-task-manager
 
 ---
 
-### 2️⃣ Backend Setup
+### 2. Backend Setup
 
 ```bash
 cd server
@@ -65,7 +65,7 @@ npm start
 
 ---
 
-### 3️⃣ Frontend Setup
+### 3. Frontend Setup
 
 ```bash
 cd client
@@ -75,7 +75,7 @@ npm start
 
 ---
 
-## 🗄️ Database Setup (MySQL)
+## Database Setup (MySQL)
 
 Run the following SQL commands:
 
@@ -95,7 +95,7 @@ CREATE TABLE tasks (
 
 ---
 
-## 📡 API Endpoints
+## API Endpoints
 
 | Method | Endpoint   | Description     |
 | ------ | ---------- | --------------- |
@@ -105,19 +105,19 @@ CREATE TABLE tasks (
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 (Add screenshots here if needed)
 
 ---
 
-## 🎥 Demo Video
+## Demo Video
 
 (Add your demo video link here)
 
 ---
 
-## 📈 Future Improvements
+## Future Improvements
 
 * User authentication (Login/Signup)
 * Role-based access (Admin/Member)
@@ -126,13 +126,13 @@ CREATE TABLE tasks (
 
 ---
 
-## 👩‍💻 Author
+## Author
 
-**Sathwika**
+Sathwika
 
 ---
 
-## ⭐ Acknowledgement
+## Acknowledgement
 
 This project was built as part of a full-stack development assignment.
 
