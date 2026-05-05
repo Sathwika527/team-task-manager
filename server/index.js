@@ -11,7 +11,6 @@ let students = [];
 app.get("/", (req, res) => {
   res.send("Student Management System API is running 🚀");
 });
-
 // POST
 app.post("/students", (req, res) => {
   students.push({ ...req.body, id: Date.now() });
