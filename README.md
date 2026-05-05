@@ -119,9 +119,3 @@ CREATE TABLE tasks (
 Sathwika
 
 ---
-
-## Acknowledgement
-
-This project was built as part of a full-stack development assignment.
-
----
